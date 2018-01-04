@@ -42,7 +42,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eab
 
 BOARD_USES_ALSA_AUDIO := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
-#AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
+AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
 
 USE_CAMERA_STUB := true
 
@@ -139,7 +139,7 @@ TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_QCOM_BSP := true
 
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
+#TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 #TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
@@ -170,6 +170,11 @@ BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 
 # SELinux policies
 include device/qcom/sepolicy/sepolicy.mk
+
+# FM Radio
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
+BOARD_HAVE_QCOM_FM := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
 
 #Wifi
 BOARD_WLAN_DEVICE                := qcwcn
