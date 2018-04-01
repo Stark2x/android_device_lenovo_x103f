@@ -106,6 +106,9 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
 
+# Snapdragon LLVM
+TARGET_USE_SDCLANG := true
+
 # Use signed boot and recovery image
 #TARGET_BOOTIMG_SIGNED := true
 
@@ -130,7 +133,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 
 # Add NON-HLOS files for ota upgrade
-ADD_RADIO_FILES ?= true
+ADD_RADIO_FILES := true
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := false
@@ -172,7 +175,8 @@ BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 include device/qcom/sepolicy/sepolicy.mk
 
 # FM Radio
-AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
+AUDIO_FEATURE_ENABLED_FM := true
+#AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
@@ -182,3 +186,4 @@ BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
+
